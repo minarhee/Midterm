@@ -1,6 +1,6 @@
 var bg;
-var fish1X = -100;
-var fish1Y = 100;
+var fish1X = -200;
+var fish1Y = -200;
 var fish2X = 0;
 var fish2Y = 200;
 var fish3X = 200;
@@ -35,7 +35,7 @@ function draw() {
     fish1Y++;
     if (fish1X > width && fish1Y > height) {
         fish1X = -100;
-        fish1Y = -200;
+        fish1Y = -300;
     }
     image(img, fish1X, fish1Y, img.width / 6, img.height / 6);
     //fish2
@@ -53,8 +53,8 @@ function draw() {
     fish3X++;
     fish3Y++;
     if (fish3X > width && fish3Y > height) {
-        fish3X = 500;
-        fish3Y = -1000;
+        fish3X = 400;
+        fish3Y = -900;
     }
     image(img3, fish3X, fish3Y, img.width / 6, img.height / 6);
     //fish 4
@@ -71,7 +71,7 @@ function draw() {
     //fish 5
     fish5X++;
     // -10, 10 controls hieght of wave
-    fish5Y = 300 + map(sin(waveCounter), -1, 1, -10, 10);
+    fish5Y = 300 + map(sin(waveCounter), -1, 1, 40, 10);
     //speed
     waveCounter = waveCounter + 0.02;
     if (fish5X > width || fish5Y > height) {
@@ -120,7 +120,7 @@ function draw() {
         release = false;
     }
     fill(139, 69, 19);
-    ellipse(foodX, foodY, 20, 20);
+    ellipse(foodX, foodY, 10, 10);
 }
 
 function mousePressed() {
