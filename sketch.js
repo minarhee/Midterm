@@ -35,7 +35,7 @@ function draw() {
     fish1Y++;
     if (fish1X > width && fish1Y > height) {
         fish1X = -100;
-        fish1Y = -100;
+        fish1Y = -200;
     }
     image(img, fish1X, fish1Y, img.width / 6, img.height / 6);
     //fish2
@@ -73,7 +73,7 @@ function draw() {
     // -10, 10 controls hieght of wave
     fish5Y = 300 + map(sin(waveCounter), -1, 1, -10, 10);
     //speed
-    waveCounter = waveCounter + 0.03;
+    waveCounter = waveCounter + 0.02;
     if (fish5X > width || fish5Y > height) {
         fish5X = -400;
         fish5Y = 300;
@@ -90,9 +90,29 @@ function draw() {
         // if release is true
         // make food drop
         foodY++;
+        var fish1Food = dist(foodX, foodY, fish1X, fish1Y);
+        console.log(fish1Food);
+        if (fish1Food < 80) {
+            release = false;
+        }
         var fish2Food = dist(foodX, foodY, fish2X, fish2Y);
         console.log(fish2Food);
         if (fish2Food < 80) {
+            release = false;
+        }
+        var fish3Food = dist(foodX, foodY, fish3X, fish3Y);
+        console.log(fish3Food);
+        if (fish3Food < 80) {
+            release = false;
+        }
+        var fish4Food = dist(foodX, foodY, fish4X, fish4Y);
+        console.log(fish4Food);
+        if (fish4Food < 80) {
+            release = false;
+        }
+        var fish5Food = dist(foodX, foodY, fish5X, fish5Y);
+        console.log(fish5Food);
+        if (fish5Food < 80) {
             release = false;
         }
     }
